@@ -1,5 +1,5 @@
 -- script for main logging trigger
--- [Logging_SQL_Spreads] tbl as a storing point
+-- [logging_tbl] tbl as a storing point for tirggered actions
 
 declare @db_name varchar(50) = '[xxx]' -- db name
 declare @tbl_name varchar(50) = 'xxx' -- tbl name
@@ -30,7 +30,7 @@ begin
         end
    -- for DELETE:
     if @crud = ''Deleted''
-            insert into [xxx].[dbo].[Logging_SQL_Spreads] (
+            insert into [xxx].[dbo].[logging_tbl] (
             Table_name,
             SubmissionID,
             ModifiedBy,
@@ -46,7 +46,7 @@ begin
             from deleted d
    -- for insert:
     if @crud = ''Inserted''
-            insert into [xxx].[dbo].[Logging_SQL_Spreads] (
+            insert into [xxx].[dbo].[logging_tbl] (
             Table_name,
             SubmissionID,
             ModifiedBy,
@@ -63,7 +63,7 @@ begin
             where not SUSER_NAME()=''xxx''
    -- for update:
     if @crud = ''Modified''
-            insert into [xxx].[dbo].[Logging_SQL_Spreads] (
+            insert into [xxx].[dbo].[logging_tbl] (
             Table_name,
             SubmissionID,
             ModifiedBy,
