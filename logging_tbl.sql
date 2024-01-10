@@ -1,5 +1,5 @@
-use [xxx]
-go;
+use [xxx];
+go
 
 create table [dbo].[logging_tbl](
 	[Table_Name] [nvarchar](50) null,
@@ -7,5 +7,5 @@ create table [dbo].[logging_tbl](
 	[ModifiedBy] [varchar](25) null,
 	[ModifiedOn] [datetime] null,
 	[Change] [char](10) null
-)
-go;
+);
+go
