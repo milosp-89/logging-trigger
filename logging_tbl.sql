@@ -1,3 +1,5 @@
+-- create main logging table:
+
 use [xxx];
 go
 
